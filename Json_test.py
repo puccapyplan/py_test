@@ -1,6 +1,6 @@
 #coding: utf-8
 '''
-Created on 2017��9��22��
+Created on 2017-09-21
 
 @author: lenovo
 '''
@@ -18,13 +18,15 @@ def format_json():
             formatJsonStr = json.dumps(jsonObj,indent=4,ensure_ascii=False,sort_keys=True)  
             print formatJsonStr
             print type(formatJsonStr)
-            print type(jsonObj)
+            print type(jsonObj)           
         except Exception, e:  
             print e  
             print "json parse error."  
         else :  
-            print "argv's length is 1, no json text input."  
-        return formatJsonStr
+            print "描述：%s"%jsonObj['fields'][u'description']
+            return formatJsonStr
+    else:
+        print 'no data'
         
 if __name__=='__main__':        
     format_json()
